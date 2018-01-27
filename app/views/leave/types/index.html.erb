@@ -1,0 +1,32 @@
+<h1>Leave Type</h1>
+<p>Have to make sure the sequence is correct to perform proper autoloading.</p>
+<%= @hello.inspect.class %>
+<%= @leave_types.pluck(:name) %>
+<br/>
+<% if notice %>
+  <p class="alert alert-info"><%= notice %></p>
+<% end %>
+<h1>Leave Types</h1>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leave_types.each do |leave_type| %>
+      <tr>
+        <td><%= leave_type.name %></td>
+        <td><%= link_to 'Edit', edit_leave_type_path(leave_type) %></td>
+        <td><%= link_to 'Destroy', leave_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leave Type', [:new, :leave_type] %>

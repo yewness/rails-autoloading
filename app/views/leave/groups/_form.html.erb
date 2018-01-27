@@ -1,0 +1,8 @@
+<%= form_with model: @leave_group do |f| %>
+  <div class='form-group'>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <%= f.submit nil, data: { disable_with: 'Loading...' }, class: 'btn btn-success' %>
+<% end %>
